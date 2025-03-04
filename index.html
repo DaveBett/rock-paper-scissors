@@ -32,10 +32,30 @@
             }
 
             function playRound(humanChoice, computerChoice) {
-                
+                if ((humanChoice == "Rock" && computerChoice == "Scissors")
+                    || (humanChoice == "Paper" && computerChoice == "Rock")
+                    || (humanChoice == "Scissors" && computerChoice == "Paper")) {
+                        console.log("You won! " + humanChoice + " beats " + computerChoice);
+                        humanScore = humanScore + 1;
+                    } else if ((humanChoice == "Rock" && computerChoice == "Paper")
+                    || (humanChoice == "Paper" && computerChoice == "Scissors")
+                    || (humanChoice == "Scissors" && computerChoice == "Rock")) {
+                        console.log("I won " + computerChoice + " beats " + humanChoice);
+                        computerScore = computerScore + 1;
+                    } else if ((humanChoice == "Rock" && computerChoice == "Rock")
+                    || (humanChoice == "Paper" && computerChoice == "Paper")
+                    || (humanChoice == "Scissors" && computerChoice == "Scissors")) {
+                        console.log("It's a draw, we both picked " + humanChoice);
+                    } else {
+                        console.log("Mmh, something went wrong");
+                    }
+                    console.log("Score: Human: " + humanScore + " Computer: " + computerScore)
             }
 
+            const humanSelection = getHumanChoice();
+            const computerSelection = getComputerChoice();
 
+            playRound(humanSelection, computerSelection);
         </script>
     </body>
 </html>
