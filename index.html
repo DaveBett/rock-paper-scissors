@@ -9,7 +9,7 @@
         <script>
             let humanScore = 0;
             let computerScore = 0;
-            
+
             function getComputerChoice() {
                 const computer = Math.floor(Math.random() * 100) + 1;
                 if (computer <= 34) {
@@ -29,6 +29,10 @@
                 } else {
                     return "Please choose one between Rock, Paper or Scissors";
                 }
+            }
+
+            function playRound(humanChoice, computerChoice) {
+                
             }
 
 
