@@ -7,21 +7,19 @@
 
     <body>
         <script>
-            let computerChoice = "";
             function getComputerChoice() {
                 const computer = Math.floor(Math.random() * 100) + 1;
                 if (computer <= 34) {
-                    computerChoice = "Rock";
+                    return "Rock";
                 } else if (computer <= 67) {
-                    computerChoice = "Paper";
+                    return "Paper";
                 } else {
-                    computerChoice = "Scissors";
+                    return "Scissors";
                 }
-                return computerChoice;
             }
 
             function getHumanChoice() {
-
+                
             }
         </script>
     </body>
