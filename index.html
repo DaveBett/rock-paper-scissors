@@ -19,7 +19,13 @@
             }
 
             function getHumanChoice() {
-                
+                player = window.prompt("Make your choice!");
+                player = player.charAt(0).toUpperCase() + player.slice(1).toLowerCase();
+                if (player == "Rock" || player == "Paper" || player == "Scissors") {
+                    return player;
+                } else {
+                    return "Please choose one between Rock, Paper or Scissors";
+                }
             }
         </script>
     </body>
