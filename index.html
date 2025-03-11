@@ -6,6 +6,10 @@
     </head>
 
     <body>
+        <button id="btnRock">Rock</button>
+        <button id="btnPaper">Paper</button>
+        <button id="btnScissors">Scissors</button>
+
         <script>
             function getComputerChoice() {
                 const computer = Math.floor(Math.random() * 100) + 1;
@@ -18,26 +22,41 @@
                 }
             }
 
-            function getHumanChoice() {
-                humanChoice = window.prompt("Make your choice!");
-                humanChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1).toLowerCase();
-                if (humanChoice == "Rock" || humanChoice == "Paper" || humanChoice == "Scissors") {
-                    return humanChoice;
-                } else {
-                    return "Please choose one between Rock, Paper or Scissors";
-                }
-            }
+            const btnRock = document.querySelector("#btnRock");
+            const btnPaper = document.querySelector("#btnPaper");
+            const btnScissors = document.querySelector("#btnScissors");
+
+            btnRock.addEventListener("click", () => { 
+                playRound("Rock", getComputerChoice());
+            });
+            btnPaper.addEventListener("click", () => {
+                playRound("Paper", getComputerChoice());
+            });
+            btnScissors.addEventListener("click", () => {
+                playRound("Scissors", getComputerChoice())
+            });
+
+
+            // function getHumanChoice() {
+           //     humanChoice = window.prompt("Make your choice!");
+             //   humanChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1).toLowerCase();
+               // if (humanChoice == "Rock" || humanChoice == "Paper" || humanChoice == "Scissors") {
+         //           return humanChoice;
+           //     } else {
+             //       return "Please choose one between Rock, Paper or Scissors";
+               // }
+            // } 
 
             
-            function playGame() {
-                let humanScore = 0;
-                let computerScore = 0;
+            // function playGame() {
+               // let humanScore = 0;
+                // let computerScore = 0;
                 
-                for (let i = 0; i <= 4; i++) {
+              //   for (let i = 0; i <= 4; i++) {
 
-                    const humanSelection = getHumanChoice();
-                    const computerSelection = getComputerChoice();
-                    playRound(humanSelection, computerSelection);
+                   // const humanSelection = getHumanChoice();
+                   // const computerChoice = getComputerChoice();
+                   // playRound(humanSelection, computerSelection);
                     
                     function playRound(humanChoice, computerChoice) {
                     if ((humanChoice == "Rock" && computerChoice == "Scissors")
@@ -60,11 +79,11 @@
                         }
                         console.log("Score: Human: " + humanScore + " Computer: " + computerScore)
                     }
-                }
-                }
+               // }
+            // }
 
 
-            playGame();
+            // playGame();
 
         </script>
     </body>
