@@ -10,6 +10,8 @@
         <button id="btnPaper">Paper</button>
         <button id="btnScissors">Scissors</button>
 
+        <div class="scoreboard"></div>
+
         <script>
             function getComputerChoice() {
                 const computer = Math.floor(Math.random() * 100) + 1;
@@ -36,6 +38,8 @@
                 playRound("Scissors", getComputerChoice())
             });
 
+            const scoreboard = document.querySelector(".scoreboard");
+            const points = document.createElement("div");
 
             // function getHumanChoice() {
            //     humanChoice = window.prompt("Make your choice!");
@@ -49,8 +53,8 @@
 
             
             // function playGame() {
-               // let humanScore = 0;
-                // let computerScore = 0;
+                let humanScore = 0;
+                let computerScore = 0;
                 
               //   for (let i = 0; i <= 4; i++) {
 
@@ -62,22 +66,23 @@
                     if ((humanChoice == "Rock" && computerChoice == "Scissors")
                         || (humanChoice == "Paper" && computerChoice == "Rock")
                         || (humanChoice == "Scissors" && computerChoice == "Paper")) {
-                            console.log("You won! " + humanChoice + " beats " + computerChoice);
+                            points.textContent = "You won! " + humanChoice + " beats " + computerChoice;
                             humanScore++;
                         } else if ((humanChoice == "Rock" && computerChoice == "Paper")
                         || (humanChoice == "Paper" && computerChoice == "Scissors")
                         || (humanChoice == "Scissors" && computerChoice == "Rock")) {
-                            console.log("I won " + computerChoice + " beats " + humanChoice);
+                            points.textContent = "I won " + computerChoice + " beats " + humanChoice;
                             computerScore++;
                         } else if ((humanChoice == "Rock" && computerChoice == "Rock")
                         || (humanChoice == "Paper" && computerChoice == "Paper")
                         || (humanChoice == "Scissors" && computerChoice == "Scissors")) {
-                            console.log("It's a draw, we both picked " + humanChoice);
+                            points.textContent = "It's a draw, we both picked " + humanChoice;
                         } else {
-                            console.log("You need to pick between Rock, Paper or Scissors, or I'm taking the point");
+                            points.textContent = "You need to pick between Rock, Paper or Scissors, or I'm taking the point";
                             computerScore++;
                         }
-                        console.log("Score: Human: " + humanScore + " Computer: " + computerScore)
+                        points.textContent = "Score: Human: " + humanScore + " Computer: " + computerScore
+                        scoreboard.appendChild(points);
                     }
                // }
             // }
