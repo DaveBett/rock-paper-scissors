@@ -1,0 +1,8 @@
+button {
+    padding: 8px 10px;
+    margin: 10px;
+}
+
+.game, .scoreboard {
+    margin: 16px 8px;
+}
